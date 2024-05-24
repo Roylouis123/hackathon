@@ -1,7 +1,27 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-
+// import initialPrompt from "../gemini/initialPrompt";
 const genAI = new GoogleGenerativeAI("AIzaSyATgAHxSoyMzAot_l40ogLpbN2PqPJwHBU");
 
+const initialPrompt = `
+You have to build a json and that json we will use to create react component. So try to give the json alone we don't need any other content.
+like comments and other details. 
+That json structure will be given in the example below,
+The Json structure is mainly used for the styling of the component.
+You have to generate 4 json with different design styling.
+You have to wrap to those 4 jsons in an array.
+You don't need to give any other content like comments and explanation and remainders.
+styles: {
+  width: "200px",
+  padding: "8px",
+  border: "none",
+  borderRadius: "4px",
+  boxSizing: "border-box",
+  backgroundColor: "#f2f2f2",
+  color: "#333",
+  transition: "background-color 0.3s ease",
+},
+element: "<input type='text' placeholder='Enter your password' />
+`;
 const askGemini = async (msg) => {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
 
@@ -11,7 +31,7 @@ const askGemini = async (msg) => {
         role: "user",
         parts: [
           {
-            text: "You have to give html, css code with four different designs as array",
+            text: initialPrompt,
           },
         ],
       },
@@ -35,9 +55,5 @@ const askGemini = async (msg) => {
   return text;
 };
 
-
-
-askGemini("create button component");
-// export default askGemini;
-
-
+askGemini(" ");
+  
