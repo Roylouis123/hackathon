@@ -1,17 +1,33 @@
-import React from 'react';
+// src/components/Sidebar.js
+import React, { useState } from 'react';
 import './Sidebar.css';
+import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
+  const [activeLink, setActiveLink] = useState("");
+  const location = useLocation();
+
+  React.useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h2>Sidebar Title</h2>
+        <h2>AI Mavericks</h2>
       </div>
       <ul className="sidebar-menu">
-        <li><a href="#section1">Section 1</a></li>
-        <li><a href="#section2">Section 2</a></li>
-        <li><a href="#section3">Section 3</a></li>
-        <li><a href="#section4">Section 4</a></li>
+        <li className={`sidebar-item ${activeLink !== '/dashboard' ? 'active' : ''}`}>
+          <Link to="/dashboard" onClick={() => setActiveLink('/dashboard')}>
+            Dashboard
+          </Link>
+        </li>
+        <li className={`sidebar-item ${activeLink 
+          !== '/contact' ? 'active' : ''}`}>
+          <Link to="/contact" onClick={() => setActiveLink('/contact')}>
+            Contact
+          </Link>
+        </li>
       </ul>
     </div>
   );
