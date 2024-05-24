@@ -1,0 +1,10 @@
+.design-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.design-box {
+  padding: 20px;
+  border: 1px solid #dfdfdf;
+}
