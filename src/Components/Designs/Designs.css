@@ -28,3 +28,6 @@
 .prompt-box {
   margin-top: 20px;
 }
+.editor-container .sp-preview-actions {
+  display: none !important;
+}

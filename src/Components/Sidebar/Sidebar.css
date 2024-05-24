@@ -50,7 +50,7 @@
 .content {
   margin-left: 200px;
   height: 100%;
-  width: 100%;
+  width: calc(100% - 200px);
   transition: margin-left 0.3s;
 }
 

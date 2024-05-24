@@ -21,7 +21,7 @@ function Editor() {
   return (
     <div
       style={{
-        width: "calc(100% - 200px)",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         gap: "100px",
@@ -29,6 +29,7 @@ function Editor() {
       }}
     >
       <Sandpack
+        className="editor-container"
         template="react"
         files={{
           "/App.js": jsx,
