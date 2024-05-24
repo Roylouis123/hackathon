@@ -17,10 +17,3 @@
 .prompt-box {
   margin-top: 20px;
 }
-.prompt-input {
-  height: 50px;
-  width: 100%;
-  border: 1px solid #dfdfdf;
-  border-radius: 8px;
-  font-size: 14px;
-}

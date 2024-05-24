@@ -16,7 +16,9 @@ const Designs = () => {
     <div className="design-wrapper">
       <div className="design-container">
         {map(Array, (ay) => (
-          <div className="design-box">{ay.id}</div>
+          <div className="design-box" onClick={switchtoEdit()}>
+            {ay.id}
+          </div>
         ))}
       </div>
       <div className="prompt-box">

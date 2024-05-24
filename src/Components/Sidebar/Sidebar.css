@@ -48,7 +48,7 @@
 .content {
   margin-left: 200px;
   height: 100%;
-  width: calc(100% - 250px);
+  width: 100%;
   transition: margin-left 0.3s;
 }
 
