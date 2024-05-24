@@ -21,14 +21,14 @@ const Editor = () => {
   return (
     <div style={{display: 'flex', height: '90vh'}}>
       <div style={{flex: '1 0 50%', display: 'flex', flexDirection: 'column'}}>
-        <div style={{height: '100vh', border: '1px solid black'}}>
-          {/* <DynamicCode jsonForm={[jsonForm]} /> */}
+      <div style={{height: '50vh', border: '1px solid black'}}>
+          {renderElement(jsonForm)}
         </div>
       </div>
       <div style={{flex: '1 0 50%', display: 'flex', flexDirection: 'column'}}>
-        <div style={{height: '50vh', border: '1px solid black'}}>
+        {/* <div style={{height: '50vh', border: '1px solid black'}}>
           {renderElement(jsonForm)}
-        </div>
+        </div> */}
         <div style={{height: '50vh', border: '1px solid black'}}>
         <pre style={{overflowY: 'auto'}}>
             {/* {Object.keys(jsonForm.styles).map(key => (
