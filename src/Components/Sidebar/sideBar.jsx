@@ -1,5 +1,5 @@
 // src/components/Sidebar.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Sidebar.css';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("");
   const location = useLocation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     setActiveLink(location.pathname);
   }, [location]);
 

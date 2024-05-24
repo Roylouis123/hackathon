@@ -2,9 +2,9 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Sidebar from "./Components/Sidebar/sideBar";
 import Contact from "./contact";
-import Dashboard from "./Components/Dashboard/Dashboard";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Sidebar from "./components/Sidebar/sideBar";
 
 function App() {
   return (
