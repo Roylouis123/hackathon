@@ -60,16 +60,38 @@ const Editor = () => {
           />
         </div>
         <div style={{ height: "50vh", border: "1px solid black" }}>
-          {Object.keys(dynamicStyles).map((styleKey) => (
-            <div key={styleKey}>
-              {styleKey}:
-              <input
-                type="text"
-                value={dynamicStyles[styleKey]}
-                onChange={(e) => handleStyleChange(styleKey, e.target.value)}
-              />
-            </div>
-          ))}
+          <textarea
+            value={Object.keys(dynamicStyles)
+              .map((styleKey) => `${styleKey}: ${dynamicStyles[styleKey]}`)
+              .join("\n")}
+            onChange={(e) => {
+              const styles = e.target.value.split("\n").reduce((acc, style) => {
+                const [key, value] = style.split(":");
+                if (key && value) {
+                  acc[key.trim()] = value.trim();
+                }
+                return acc;
+              }, {});
+              setDynamicStyles(styles);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                setDynamicStyles((prevStyles) => {
+                  const newStyle = e.target.value.trim();
+                  if (newStyle.includes(":")) {
+                    const [key, value] = newStyle
+                      .split(":")
+                      .map((part) => part.trim());
+                    return { ...prevStyles, [key]: value };
+                  } else {
+                    return prevStyles;
+                  }
+                });
+              }
+            }}
+            rows={Object.keys(dynamicStyles).length + 1}
+            style={{ width: "100%", whiteSpace: "pre-wrap" }}
+          />
         </div>
       </div>
     </div>
