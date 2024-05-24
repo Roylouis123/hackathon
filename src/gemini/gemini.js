@@ -22,6 +22,8 @@ styles: {
 },
 element: "<input type='text' placeholder='Enter your password' />
 `;
+
+
 const askGemini = async (msg) => {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
 
