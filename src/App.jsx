@@ -1,10 +1,10 @@
 // src/App.js
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Sidebar from './components/sideBar';
-import Contact from './contact';
-import Dashboard from './components/Dashboard/Dashboard';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Sidebar from "./Components/Sidebar/sideBar";
+import Contact from "./contact";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
         <Sidebar />
         <div className="content">
           <Routes>
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </div>
       </div>
