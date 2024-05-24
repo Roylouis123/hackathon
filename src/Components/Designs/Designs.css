@@ -13,14 +13,10 @@
 .design-box {
   padding: 20px;
   border: 1px solid #dfdfdf;
+  display: flex;
+  justify-content: center;
+  place-items: center;
 }
 .prompt-box {
   margin-top: 20px;
-}
-.prompt-input {
-  height: 50px;
-  width: 100%;
-  border: 1px solid #dfdfdf;
-  border-radius: 8px;
-  font-size: 14px;
 }

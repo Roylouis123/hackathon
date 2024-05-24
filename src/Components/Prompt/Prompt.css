@@ -3,6 +3,18 @@
 }
 .send-icon {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 0;
+  top: 13px;
+}
+
+.prompt-input {
+  padding: 5px 8px;
+  height: 40px;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.prompt-input:focus {
+  outline: none;
 }
