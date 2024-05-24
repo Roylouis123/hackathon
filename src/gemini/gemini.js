@@ -16,9 +16,10 @@ const askGemini = async (dispatch, msg) => {
             like comments and other details.
             That json structure will be given in the example below,
             The Json structure is mainly used for the styling of the component.
-            You have to generate 4 json with different design styling.
-            You have to wrap to those 4 jsons in an array.
+            You have to generate 10 json with different design styling.
+            You have to wrap to those 10 jsons in an array.
             You don't need to give any other content like comments and explanation and remainders.
+            Each styles should be unique and different.
             styles: {
               width: "200px",
               padding: "8px",
