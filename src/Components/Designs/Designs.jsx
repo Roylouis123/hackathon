@@ -1,46 +1,68 @@
-import { get, map } from "lodash";
-import "./Designs.css";
-import React from "react";
-import Prompt from "../Prompt/Prompt";
-import { useNavigate } from "react-router-dom";
-import parse from "html-react-parser";
-import { useDispatch, useSelector } from "react-redux";
+import {
+  SandpackLayout,
+  SandpackPreview,
+  SandpackProvider,
+} from "@codesandbox/sandpack-react";
 import { setSelectedResponse } from "../../redux/slice/responseSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 const Designs = () => {
   const dispatch = useDispatch();
   const Navigate = useNavigate();
-  const designArray = useSelector((state) => get(state, "ResponseSlice.response"));
+  const files = {
+    "App.js": {
+      code: `
+            import React from 'react';
+            import ReactDOM from 'react-dom';
+            import './index.css';
+           
+            function App() {
+              return (
+                <button className='btn1'>Click Me</button>
+              );
+            }
+           
+            export default App;
+          `,
+    },
+    "index.css": {
+      code: `
+      body{
+        display:flex;
+        justify-content:center;
+        place-items:center;
+      }
+      .btn1{
+        background-color: blue;
+       
+      }
+          `,
+    },
+  };
   const switchtoEdit = (item) => {
+    console.log("ittteeem11211", item);
     dispatch(setSelectedResponse({ value: item }));
     Navigate("/editor");
   };
-  const renderElement = (item) => {
-    const content = parse(item.element, {
-      replace: (domNode) => {
-        if (domNode.attribs) {
-          // Apply styles to the top-level node
-          Object.assign((domNode.attribs.style = {}), item.styles);
-        }
-      },
-    });
-    return content;
-  };
-
   return (
     <div className="design-wrapper">
       <div className="design-container">
-        {map(designArray, (ay) => (
-          <div className="design-box" onClick={() => switchtoEdit(ay)}>
-            {renderElement(ay)}
-          </div>
-        ))}
-      </div>
-      <div className="prompt-box">
-        <Prompt />
+        <div className="design-box" onClick={(files) => switchtoEdit(files)}>
+          <SandpackProvider
+            files={files}
+            theme="light"
+            template="react"
+            style={{ height: "40vh", width: "30vw" }}
+          >
+            <SandpackLayout style={{ height: "40vh", width: "30vw" }}>
+              <SandpackPreview style={{ height: "40vh", width: "30vw" }} />
+            </SandpackLayout>
+          </SandpackProvider>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Designs;
-

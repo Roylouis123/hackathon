@@ -43,7 +43,11 @@ const askGemini = async (dispatch, msg) => {
     },
   });
 
-  const result = await chat.sendMessage(msg);
+  const result = await chat.sendMessage(
+    `Give the only 4 type of react code and each type of code bottom add css for -  
+    ${msg}
+    - in react component with no explanation - structure code,css - code,css - code,css - code,css`
+  );
 
   const response = await result.response;
 
