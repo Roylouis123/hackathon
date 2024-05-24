@@ -4,12 +4,21 @@
 .send-icon {
   position: absolute;
   right: 0;
-  top: 13px;
+  bottom: 13px;
+  background: rgba(30, 144, 255, 0.3);
+  color: #1e90ff;
+  border: 1px solid rgba(30, 144, 255, 0.3);
+  border-radius: 8px;
+  padding: 5px 8px;
+  justify-content: center;
+  place-items: center;
+  display: flex;
+  gap: 5px;
 }
 
 .prompt-input {
   padding: 5px 8px;
-  height: 40px;
+  height: 70px;
   width: 100%;
   border: 1px solid #dfdfdf;
   border-radius: 8px;

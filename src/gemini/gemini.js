@@ -16,10 +16,11 @@ const askGemini = async (dispatch, msg) => {
             like comments and other details.
             That json structure will be given in the example below,
             The Json structure is mainly used for the styling of the component.
-            You have to generate 4 json with different design styling.
-            You have to wrap to those 4 jsons in an array.
+            You have to generate 10 json with different design styling.
+            You have to wrap to those 10 jsons in an array.
             You don't need to give any other content like comments and explanation and remainders.
-            styles: {
+            Each styles should be unique and different.
+            {styles: {
               width: "200px",
               padding: "8px",
               border: "none",
@@ -29,7 +30,20 @@ const askGemini = async (dispatch, msg) => {
               color: "#333",
               transition: "background-color 0.3s ease",
             },
-            element: "<input type='text' placeholder='Enter your password' />`,
+            element: "<input type='text' placeholder='Enter your password' />
+            completedElement: <input style={{
+              width: "200px",
+              padding: "8px",
+              border: "none",
+              borderRadius: "4px",
+              boxSizing: "border-box",
+              backgroundColor: "#f2f2f2",
+              color: "#333",
+              transition: "background-color 0.3s ease",
+            }} type='text' placeholder='Enter your password' />
+ 
+            the main important thing in the generation of json in the completedElement is that the styles should come in {{}}.
+          }`,
           },
         ],
       },

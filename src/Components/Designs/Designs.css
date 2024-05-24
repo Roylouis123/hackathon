@@ -8,14 +8,18 @@
 .design-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-auto-rows: 10rem; /* Set the height of each row */
+  row-gap: 20px;
+  column-gap: 10px;
 }
 .design-box {
   padding: 20px;
   border: 1px solid #dfdfdf;
   display: flex;
   justify-content: center;
+  border-radius: 10px;
   place-items: center;
+  box-shadow: 1px 1px 5px 1px #dfdfdf;
 }
 .prompt-box {
   margin-top: 20px;
