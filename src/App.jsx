@@ -1,12 +1,14 @@
-import Dashboard from "./Components/Dashboard/Dashboard";
+
+import React from 'react';
+import './App.css';
+import Sidebar from './components/sideBar';
+
 
 function App() {
   return (
-    <>
-      <div>
-        <Dashboard />
-      </div>
-    </>
+    <div className="App">
+      <Sidebar />
+    </div>
   );
 }
 
