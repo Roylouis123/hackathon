@@ -1,6 +1,7 @@
 import { map } from "lodash";
 import "./Designs.css";
 import React from "react";
+import Prompt from "../Prompt/Prompt";
 
 const Designs = () => {
   const Array = [
@@ -12,11 +13,16 @@ const Designs = () => {
   ];
 
   return (
-    <div className="design-container">
-      {map(Array, (ay) => (
-        <div className="design-box">{ay.id}</div>
-      ))}
-    </div>
+    <>
+      <div className="design-container">
+        {map(Array, (ay) => (
+          <div className="design-box">{ay.id}</div>
+        ))}
+      </div>
+      <div>
+        <Prompt />
+      </div>
+    </>
   );
 };
 

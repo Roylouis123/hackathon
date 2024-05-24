@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Prompt = () => {
-  return <div>Prompt</div>;
+  const [prompt, setPrompt] = useState("");
+  return (
+    <div>
+      <input type="text" onChange={setPrompt(value)} />
+    </div>
+  );
 };
 
 export default Prompt;
