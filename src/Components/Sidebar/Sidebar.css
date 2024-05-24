@@ -46,8 +46,8 @@
 }
 
 .content {
-  margin-left: 250px;
-  padding: 20px;
+  margin-left: 200px;
+  height: 100%;
   width: calc(100% - 250px);
   transition: margin-left 0.3s;
 }

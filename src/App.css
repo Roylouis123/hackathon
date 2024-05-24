@@ -1,7 +1,3 @@
 .App {
-    display: flex;
-  }
-  
-  .content {
-    padding: 20px;
-  }
+  display: flex;
+}
