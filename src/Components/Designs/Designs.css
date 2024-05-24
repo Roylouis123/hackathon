@@ -1,5 +1,12 @@
-.design-container {
+.design-wrapper {
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
   padding: 20px;
+  justify-content: space-between;
+}
+.design-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -7,4 +14,14 @@
 .design-box {
   padding: 20px;
   border: 1px solid #dfdfdf;
+}
+.prompt-box {
+  margin-top: 20px;
+}
+.prompt-input {
+  height: 50px;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  border-radius: 8px;
+  font-size: 14px;
 }

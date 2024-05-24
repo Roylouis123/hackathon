@@ -4,7 +4,11 @@ const Prompt = () => {
   const [prompt, setPrompt] = useState("");
   return (
     <div>
-      <input type="text" onChange={setPrompt(value)} />
+      <input
+        className="prompt-input"
+        type="text"
+        onChange={(e) => setPrompt(e.target.value)}
+      />
     </div>
   );
 };

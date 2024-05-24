@@ -1,13 +1,11 @@
-
-import React from 'react';
-import './App.css';
-import Sidebar from './components/sideBar';
-
+import React from "react";
+import "./App.css";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
   return (
     <div className="App">
-      <Sidebar />
+      <Dashboard />
     </div>
   );
 }

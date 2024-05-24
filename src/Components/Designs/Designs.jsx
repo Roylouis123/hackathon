@@ -13,16 +13,16 @@ const Designs = () => {
   ];
 
   return (
-    <>
+    <div className="design-wrapper">
       <div className="design-container">
         {map(Array, (ay) => (
           <div className="design-box">{ay.id}</div>
         ))}
       </div>
-      <div>
+      <div className="prompt-box">
         <Prompt />
       </div>
-    </>
+    </div>
   );
 };
 
