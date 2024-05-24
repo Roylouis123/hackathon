@@ -11,6 +11,10 @@
   grid-auto-rows: 10rem; /* Set the height of each row */
   row-gap: 20px;
   column-gap: 10px;
+  overflow: auto;
+}
+.design-container::-webkit-scrollbar {
+  display: none;
 }
 .design-box {
   padding: 20px;

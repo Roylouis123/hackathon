@@ -22,7 +22,7 @@ const Prompt = () => {
         onChange={(e) => setPrompt(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && handleSend()}
       />
-      <button className="send-icon" onClick={handleSend()}>
+      <button className="send-icon" onClick={() => handleSend()}>
         <span>
           <img src={generateIcon} />
         </span>

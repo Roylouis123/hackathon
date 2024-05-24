@@ -21,7 +21,7 @@ function Editor() {
   return (
     <div
       style={{
-        width: "83vw",
+        width: "calc(100% - 200px)",
         display: "flex",
         flexDirection: "column",
         gap: "100px",
@@ -32,7 +32,6 @@ function Editor() {
         template="react"
         files={{
           "/App.js": jsx,
-          "/index.css": css,
         }}
         theme={"dark"}
         options={{
