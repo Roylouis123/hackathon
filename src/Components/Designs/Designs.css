@@ -13,6 +13,9 @@
 .design-box {
   padding: 20px;
   border: 1px solid #dfdfdf;
+  display: flex;
+  justify-content: center;
+  place-items: center;
 }
 .prompt-box {
   margin-top: 20px;

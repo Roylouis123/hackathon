@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const responseSlice = createSlice({
   name: "response",
   initialState: {
-    aiResponse: [],
+    data: [],
   },
   reducers: {
     setAiResponse: (state, action) => {
-      state.documents = action.payload.value;
+      state.data = action.payload.value;
     },
   },
 });
