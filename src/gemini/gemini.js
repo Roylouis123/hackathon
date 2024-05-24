@@ -11,7 +11,7 @@ const askGemini = async (msg) => {
         role: "user",
         parts: [
           {
-            text: "You have to give html, css code with four different designs as array",
+            text: "you have to give me html,css 4 different alternative design in code",
           },
         ],
       },
@@ -35,9 +35,6 @@ const askGemini = async (msg) => {
   return text;
 };
 
-
-
-askGemini("create button component");
-// export default askGemini;
+ export default askGemini;
 
 
