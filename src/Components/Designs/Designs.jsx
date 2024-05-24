@@ -4,10 +4,12 @@ import React from "react";
 import Prompt from "../Prompt/Prompt";
 import { useNavigate } from "react-router-dom";
 import parse from "html-react-parser";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedResponse } from "../../redux/slice/responseSlice";
 const Designs = () => {
+  const dispatch = useDispatch();
   const Navigate = useNavigate();
-  const designArray = useSelector((state) => get(state, "ResponseSlice.data"));
+  const designArray = useSelector((state) => get(state, "ResponseSlice.response"));
   console.log("desingArray", designArray);
   //   const Array = [
   //     {
@@ -46,8 +48,10 @@ const Designs = () => {
   //     },
   //   ];
 
-  const switchtoEdit = () => {
-    Navigate("editor");
+  const switchtoEdit = (item) => {
+    console.log('item1', item)
+    dispatch(setSelectedResponse({ value: item }));
+    Navigate("/editor");
   };
   const renderElement = (item) => {
     const content = parse(item.element, {
@@ -65,7 +69,7 @@ const Designs = () => {
     <div className="design-wrapper">
       <div className="design-container">
         {map(designArray, (ay) => (
-          <div className="design-box" onClick={switchtoEdit}>
+          <div className="design-box" onClick={switchtoEdit(ay)}>
             {renderElement(ay)}
           </div>
         ))}
