@@ -1,0 +1,8 @@
+.prompt-container {
+  position: relative;
+}
+.send-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
