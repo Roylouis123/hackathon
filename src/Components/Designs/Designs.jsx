@@ -9,10 +9,12 @@ import { setSelectedResponse } from "../../redux/slice/responseSlice";
 const Designs = () => {
   const dispatch = useDispatch();
   const Navigate = useNavigate();
-  const designArray = useSelector((state) => get(state, "ResponseSlice.response"));
+  const designArray = useSelector((state) =>
+    get(state, "ResponseSlice.response")
+  );
   const switchtoEdit = (item) => {
     dispatch(setSelectedResponse({ value: item }));
-    Navigate("/editor");
+    Navigate("/Neweditor");
   };
   const renderElement = (item) => {
     const content = parse(item.element, {
@@ -43,4 +45,3 @@ const Designs = () => {
 };
 
 export default Designs;
-
