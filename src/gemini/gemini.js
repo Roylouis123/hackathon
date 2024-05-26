@@ -23,9 +23,13 @@ const askGemini = async (dispatch, msg) => {
             You have to create a Component what user have prompted.
             Below is just an example.
 
+            Note: I strictly tell you to give each json unique id and unique jsx and unique css.
+
             Response:
 
             '''[{...},{...},{...},{...}]'''
+
+            Note: You have to create a Component what user have prompted and you must give only Array of JSON without any note or comments.
 
             Example:
             [
@@ -165,7 +169,173 @@ const askGemini = async (dispatch, msg) => {
               },
             ]
 
-            Note: You have to create a Component what user have prompted and you must give only Array of JSON.
+            Example 2:
+
+            [
+              {
+                "id": 1,
+                "jsx": 'import React from "react";
+                import "./styles.css";
+                
+                const Navbar = () => {
+                  return (
+                    <nav className="navbar">
+                      <ul>
+                        <li>
+                          <a href="#home">Home</a>
+                        </li>
+                        <li>
+                          <a href="#cars">Cars</a>
+                        </li>
+                        <li>
+                          <a href="#about">About</a>
+                        </li>
+                        <li>
+                          <a href="#contact">Contact</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  );
+                };
+                
+                const CarCard = ({ image, name, description }) => {
+                  return (
+                    <div className="car-card">
+                      <img src={image} alt={name} />
+                      <h3>{name}</h3>
+                      <p>{description}</p>
+                    </div>
+                  );
+                };
+                
+                const Footer = () => {
+                  return (
+                    <footer className="footer">
+                      <p>&copy; 2024 Car Website. All rights reserved.</p>
+                    </footer>
+                  );
+                };
+                
+                const App = () => {
+                  const cars = [
+                    {
+                      image: "https://source.unsplash.com/150x150/?car1",
+                      name: "Car 1",
+                      description: "Description for Car 1",
+                    },
+                    {
+                      image: "https://source.unsplash.com/150x150/?car2",
+                      name: "Car 2",
+                      description: "Description for Car 2",
+                    },
+                    {
+                      image: "https://source.unsplash.com/150x150/?car3",
+                      name: "Car 3",
+                      description: "Description for Car 3",
+                    },
+                  ];
+                
+                  return (
+                    <div className="App">
+                      <Navbar />
+                      <div className="car-cards-container">
+                        {cars.map((car, index) => (
+                          <CarCard
+                            key={index}
+                            image={car.image}
+                            name={car.name}
+                            description={car.description}
+                          />
+                        ))}
+                      </div>
+                      <Footer />
+                    </div>
+                  );
+                };
+                
+                export default App;
+                ',
+                "css": '
+                .App {
+                  font-family: Arial, sans-serif;
+                  display: flex;
+                  flex-direction: column;
+                  min-height: 100vh;
+                }
+                
+                .car-cards-container {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  padding: 16px;
+                  flex-grow: 1;
+                }
+                
+                /* Navbar styles */
+                .navbar {
+                  background-color: #333;
+                  overflow: hidden;
+                }
+                
+                .navbar ul {
+                  list-style-type: none;
+                  margin: 0;
+                  padding: 0;
+                }
+                
+                .navbar li {
+                  float: left;
+                }
+                
+                .navbar li a {
+                  display: block;
+                  color: white;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                }
+                
+                .navbar li a:hover {
+                  background-color: #111;
+                }
+                
+                
+                .car-card {
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  overflow: hidden;
+                  margin: 16px;
+                  padding: 16px;
+                  text-align: center;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                }
+                
+                .car-card img {
+                  max-width: 100%;
+                  height: auto;
+                }
+                
+                .car-card h3 {
+                  margin: 16px 0 8px;
+                }
+                
+                .car-card p {
+                  color: #666;
+                }
+                
+                /* Footer styles */
+                .footer {
+                  background-color: #333;
+                  color: white;
+                  text-align: center;
+                  padding: 10px 0;
+                  position: relative;
+                  bottom: 0;
+                  width: 100%;
+                }
+                '
+              }
+            ]
         
       `,
           },

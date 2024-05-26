@@ -17,26 +17,168 @@ import BoxLoader from "../loader/boxLoader";
 const json = [
   {
     "id": 1,
-    "jsx": "import React from 'react';\nimport './styles.css';\n\nconst NavbarWithCards = () => {\n  return (\n    <div>\n      <nav className=\"navbar\">\n        <div className=\"navbar-brand\">\n          <h1>My Website</h1>\n        </div>\n      </nav>\n      <div className=\"card-container\">\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default NavbarWithCards;",
-    "css": ".navbar {\n  background-color: #f0f0f0;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.navbar-brand {\n  font-size: 1.5rem;\n  font-weight: bold;\n}\n\n.card-container {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 1rem;\n}\n\n.card {\n  width: calc(33.33% - 20px);\n  margin-bottom: 1rem;\n  border: 1px solid #ddd;\n  padding: 1rem;\n  border-radius: 8px;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n\n.card img {\n  width: 100%;\n  height: 200px;\n  object-fit: cover;\n  border-radius: 8px 8px 0 0;\n}\n\n.card h2 {\n  font-size: 1.2rem;\n  margin-top: 1rem;\n}\n\n.card p {\n  color: #666;\n}"
-  },
-  {
-    "id": 2,
-    "jsx": "import React from 'react';\nimport './styles.css';\n\nconst NavbarWithCards = () => {\n  return (\n    <div>\n      <nav className=\"navbar\">\n        <div className=\"navbar-brand\">\n          <h1>My Website</h1>\n        </div>\n      </nav>\n      <div className=\"card-container\">\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default NavbarWithCards;",
-    "css": ".navbar {\n  background-color: #333;\n  color: #fff;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.navbar-brand {\n  font-size: 1.5rem;\n  font-weight: bold;\n}\n\n.card-container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 1rem;\n  padding: 1rem;\n}\n\n.card {\n  border: 1px solid #ddd;\n  padding: 1rem;\n  border-radius: 8px;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n  background-color: #fff;\n}\n\n.card img {\n  width: 100%;\n  height: 200px;\n  object-fit: cover;\n  border-radius: 8px 8px 0 0;\n}\n\n.card h2 {\n  font-size: 1.2rem;\n  margin-top: 1rem;\n}\n\n.card p {\n  color: #666;\n}"
-  },
-  {
-    "id": 3,
-    "jsx": "import React from 'react';\nimport './styles.css';\n\nconst NavbarWithCards = () => {\n  return (\n    <div>\n      <nav className=\"navbar\">\n        <div className=\"navbar-brand\">\n          <h1>My Website</h1>\n        </div>\n      </nav>\n      <div className=\"card-container\">\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default NavbarWithCards;",
-    "css": ".navbar {\n  background-color: #f0f0f0;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.navbar-brand {\n  font-size: 1.5rem;\n  font-weight: bold;\n}\n\n.card-container {\n  display: flex;\n  justify-content: space-between;\n  padding: 1rem;\n}\n\n.card {\n  width: 200px;\n  height: 300px;\n  background-color: #fff;\n  border-radius: 10px;\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n  overflow: hidden;\n  margin-bottom: 20px;\n}\n\n.card img {\n  width: 100%;\n  height: 200px;\n  object-fit: cover;\n}\n\n.card h2 {\n  padding: 10px 15px;\n  background-color: #f8f8f8;\n  font-size: 1.2rem;\n  margin-top: 10px;\n}\n\n.card p {\n  padding: 10px 15px;\n  color: #666;\n}"
-  },
-  {
-    "id": 4,
-    "jsx": "import React from 'react';\nimport './styles.css';\n\nconst NavbarWithCards = () => {\n  return (\n    <div>\n      <nav className=\"navbar\">\n        <div className=\"navbar-brand\">\n          <h1>My Website</h1>\n        </div>\n      </nav>\n      <div className=\"card-container\">\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n        <div className=\"card\">\n          <img src=\"https://picsum.photos/200/300\" alt=\"Card Image\" />\n          <h2>Card Title</h2>\n          <p>This is a sample card content. You can add more text here.</p>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default NavbarWithCards;",
-    "css": ".navbar {\n  background-color: #f0f0f0;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.navbar-brand {\n  font-size: 1.5rem;\n  font-weight: bold;\n}\n\n.card-container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 1rem;\n  padding: 1rem;\n}\n\n.card {\n  border: none;\n  padding: 1rem;\n  border-radius: 10px;\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n  background-color: #fff;\n  transition: transform 0.3s ease;\n}\n\n.card:hover {\n  transform: translateY(-5px);\n  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);\n}\n\n.card img {\n  width: 100%;\n  height: 200px;\n  object-fit: cover;\n  border-radius: 10px 10px 0 0;\n}\n\n.card h2 {\n  font-size: 1.2rem;\n  margin-top: 1rem;\n}\n\n.card p {\n  color: #666;\n}"
+    "jsx": `import React from "react";
+    import "./styles.css";
+    
+    const Navbar = () => {
+      return (
+        <nav className="navbar">
+          <ul>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#cars">Cars</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      );
+    };
+    
+    const CarCard = ({ image, name, description }) => {
+      return (
+        <div className="car-card">
+          <img src={image} alt={name} />
+          <h3>{name}</h3>
+          <p>{description}</p>
+        </div>
+      );
+    };
+    
+    const Footer = () => {
+      return (
+        <footer className="footer">
+          <p>&copy; 2024 Car Website. All rights reserved.</p>
+        </footer>
+      );
+    };
+    
+    const App = () => {
+      const cars = [
+        {
+          image: "https://source.unsplash.com/150x150/?car1",
+          name: "Car 1",
+          description: "Description for Car 1",
+        },
+        {
+          image: "https://source.unsplash.com/150x150/?car2",
+          name: "Car 2",
+          description: "Description for Car 2",
+        },
+        {
+          image: "https://source.unsplash.com/150x150/?car3",
+          name: "Car 3",
+          description: "Description for Car 3",
+        },
+      ];
+    
+      return (
+        <div className="App">
+          <Navbar />
+          <div className="car-cards-container">
+            {cars.map((car, index) => (
+              <CarCard
+                key={index}
+                image={car.image}
+                name={car.name}
+                description={car.description}
+              />
+            ))}
+          </div>
+          <Footer />
+        </div>
+      );
+    };
+    
+    export default App;
+    `,
+    "css": `/* src/App.css */
+    .App {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    .car-cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 16px;
+      flex-grow: 1;
+    }
+    
+    /* Navbar styles */
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+    }
+    
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .navbar li {
+      float: left;
+    }
+    
+    .navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    .navbar li a:hover {
+      background-color: #111;
+    }
+    
+    /* CarCard styles */
+    .car-card {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 16px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .car-card img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .car-card h3 {
+      margin: 16px 0 8px;
+    }
+    
+    .car-card p {
+      color: #666;
+    }
+    
+    /* Footer styles */
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    `
   }
 ]
-
 
 
 
