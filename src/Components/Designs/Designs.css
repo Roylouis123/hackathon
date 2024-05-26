@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  height: calc(100% - 110px);
+  overflow-y: auto;
 }
 
 .design-container {
@@ -10,12 +12,6 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-}
-
-
-.design-wrapper {
-  display: flex;
-  flex-direction: column;
 }
 
 .loader-container {
@@ -36,7 +32,7 @@
   width: 80%;
 }
 
-.Edit_Button{
+.Edit_Button {
   border: 1px solid black;
   border-radius: 50%;
   padding: 5px;
@@ -46,7 +42,8 @@
   margin-left: 10px;
 }
 
-/* Designs.css */.designs-container {
+/* Designs.css */
+.designs-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* Distribute items evenly */
@@ -59,6 +56,8 @@
 
 @media screen and (max-width: 768px) {
   .design-box {
-    width: calc(100% - 20px); /* Adjust as needed for smaller screens, where each item occupies the full width */
+    width: calc(
+      100% - 20px
+    ); /* Adjust as needed for smaller screens, where each item occupies the full width */
   }
 }

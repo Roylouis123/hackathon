@@ -1,4 +1,5 @@
 import { Sandpack } from "@codesandbox/sandpack-react";
+import "./Editor.css";
 import { get } from "lodash";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";

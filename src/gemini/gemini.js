@@ -357,17 +357,17 @@ const askGemini = async (dispatch, msg) => {
 
   const text = response.text();
   console.log(text, "the text");
-
-  const cleanedString = text.replace(/```json|```/g, "").trim();
-  console.log("cleanedStr", cleanedString);
+  const cleanedString = text.replace(/.*?(```json(.*?)```).*?/gs, "$2").trim();
+  const extractedString = cleanedString.replace(/`/g, "");
+  console.log("cleanedStr", extractedString);
   try {
-    const jsonArray = JSON.parse(cleanedString);
+    const jsonArray = JSON.parse(extractedString);
+    console.log("jsonArray", jsonArray);
     dispatch(setAiResponse({ value: jsonArray }));
   } catch (error) {
     console.error("Failed to parse JSON:", error);
   }
-
-  return text;
+  // return text;
 };
 
 export default askGemini;
