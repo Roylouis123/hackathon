@@ -8,16 +8,6 @@ function Editor() {
     get(state, "ResponseSlice.selectedResponse")
   );
   console.log(jsonForm);
-  const [jsx, setJsx] = useState(`export default function App() {
-        return <div>${jsonForm.completedElement}</div>
-        }`);
-  const [css, setCss] = useState(`body {
-        margin: 0;
-        display: flex;
-        place-items: center;
-        min-width: 320px;
-        min-height: 100vh;
-    }`);
   return (
     <div
       style={{
@@ -32,7 +22,8 @@ function Editor() {
         className="editor-container"
         template="react"
         files={{
-          "/App.js": jsx,
+          "/App.js": jsonForm.jsx,
+          "/styles.css": jsonForm.css,
         }}
         theme={"dark"}
         options={{

@@ -1,33 +1,64 @@
 .design-wrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 20px;
-  justify-content: space-between;
 }
+
 .design-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 10rem; /* Set the height of each row */
-  row-gap: 20px;
-  column-gap: 10px;
-  overflow: auto;
-}
-.design-container::-webkit-scrollbar {
-  display: none;
-}
-.design-box {
-  padding: 20px;
-  border: 1px solid #dfdfdf;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  border-radius: 10px;
-  place-items: center;
-  box-shadow: 1px 1px 5px 1px #dfdfdf;
 }
+
+
+.design-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the loader */
+  align-items: center; /* Vertically center the loader */
+  height: 100vh; /* Make the container full height of the viewport */
+  width: 100%;
+}
+
 .prompt-box {
-  margin-top: 20px;
+  position: fixed;
+  margin-left: 100px;
+  bottom: 20px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999; /* Ensure it appears above other content */
+  width: 80%;
 }
-.editor-container .sp-preview-actions {
-  display: none !important;
+
+.Edit_Button{
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 5px;
+  color: rgb(0, 0, 0);
+
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Designs.css */.designs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly */
+}
+
+.design-box {
+  width: calc(50% - 20px); /* Adjust as needed for two items per row */
+  margin-bottom: 20px; /* Add margin between rows */
+}
+
+@media screen and (max-width: 768px) {
+  .design-box {
+    width: calc(100% - 20px); /* Adjust as needed for smaller screens, where each item occupies the full width */
+  }
 }
