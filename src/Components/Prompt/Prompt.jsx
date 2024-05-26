@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./Prompt.css";
 import SendIcon from "@mui/icons-material/Send";
 import askGemini from "../../gemini/gemini";
-const Prompt = () => {
+const Prompt = ({ setData }) => {
   const [prompt, setPrompt] = useState("");
   const handleSend = async () => {
     const result = await askGemini(prompt);
-    console.log(result);
+    setData(result);
   };
 
   return (
@@ -23,4 +23,3 @@ const Prompt = () => {
 };
 
 export default Prompt;
-

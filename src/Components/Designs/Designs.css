@@ -3,12 +3,18 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .design-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+  
+}
+
+.design-subcontainer{
+  display:flex;
+  justify-content: space-around;
 }
 .design-box {
   padding: 20px;

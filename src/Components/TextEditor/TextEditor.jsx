@@ -2,10 +2,10 @@ import { Sandpack } from "@codesandbox/sandpack-react";
 import { useState } from "react";
 
 export default function TextEditor() {
-  const [jsx, setJsx] = useState(`export default function App() {
-    return <h1>Hello Sandpack</h1>
+  const [jsx, setJsx] = useState(`export default function App()\n {
+    return <h1>Hello Sandpack</h1>\n
     }`);
-  const [css, setCss] = useState(`body {
+  const [css, setCss] = useState(`body { 
     margin: 0;
     display: flex;
     place-items: center;
