@@ -1,21 +1,17 @@
 import { Sandpack } from "@codesandbox/sandpack-react";
-import { useState } from "react";
+import { get } from "lodash";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
-export default function TextEditor() {
-  const [jsx, setJsx] = useState(`export default function App() {
-    return <h1>Hello Sandpack</h1>
-    }`);
-  const [css, setCss] = useState(`body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-  }`);
+function Editor() {
+  const jsonForm = useSelector((state) =>
+    get(state, "ResponseSlice.selectedResponse")
+  );
+  console.log(jsonForm);
   return (
     <div
       style={{
-        width: "100vw",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         gap: "100px",
@@ -23,10 +19,11 @@ export default function TextEditor() {
       }}
     >
       <Sandpack
+        className="editor-container"
         template="react"
         files={{
-          "/App.js": jsx,
-          "/index.css": css,
+          "/App.js": jsonForm.jsx,
+          "/styles.css": jsonForm.css,
         }}
         theme={"dark"}
         options={{
@@ -39,3 +36,5 @@ export default function TextEditor() {
     </div>
   );
 }
+
+export default Editor;

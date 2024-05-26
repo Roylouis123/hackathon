@@ -1,0 +1,35 @@
+.loading-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+  
+  .box {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    background-color: #007bff;
+    animation: bounce 1s ease-in-out infinite;
+  }
+  
+  .box:nth-child(2) {
+    background-color: #28a745;
+    animation-delay: 0.2s;
+  }
+  
+  .box:nth-child(3) {
+    background-color: #dc3545;
+    animation-delay: 0.4s;
+  }
+  
+  .box:nth-child(4) {
+    background-color: #ffc107;
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
