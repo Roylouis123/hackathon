@@ -52,13 +52,8 @@ const Designs = () => {
     dispatch(setSelectedResponse({ value: item }));
     Navigate("/editor");
   };
-  const switchToEdit = (item) => {
-    dispatch(setSelectedResponse({ value: item }));
-    navigate("/editor");
-  };
 
   const renderElement = (item) => {
-
 
     return (
       <SandpackProvider
