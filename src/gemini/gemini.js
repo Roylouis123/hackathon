@@ -41,8 +41,12 @@ const askGemini = async (dispatch, msg) => {
               color: "#333",
               transition: "background-color 0.3s ease",
             }} type='text' placeholder='Enter your password' />
- 
+            newElement:<input className="new-element"type='text' placeholder='Enter your password' />
+            className: "new-element"
+          }
+           
             the main important thing in the generation of json in the completedElement is that the styles should come in {{}}.
+            the main important thing in the generation of json in the every element must contain the className property. The className in the new element property must match with the className property.
           }`,
           },
         ],
@@ -68,7 +72,16 @@ const askGemini = async (dispatch, msg) => {
   console.log("cleanedStr", cleanedString);
   try {
     const jsonArray = JSON.parse(cleanedString);
-    dispatch(setAiResponse({ value: jsonArray }));
+    const updatedJsonArray = jsonArray.map((item) => {
+      const { styles } = item;
+
+      return {
+        ...item,
+        completedElement: styles,
+        newCss: styles,
+      };
+    });
+    dispatch(setAiResponse({ value: updatedJsonArray }));
   } catch (error) {
     console.error("Failed to parse JSON:", error);
   }

@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: 20px;
   justify-content: space-between;
+  text-align: center;
 }
 .design-container {
   display: grid;
@@ -30,4 +31,8 @@
 }
 .editor-container .sp-preview-actions {
   display: none !important;
+}
+.info-text {
+  font-size: 18px;
+  font-weight: 600;
 }

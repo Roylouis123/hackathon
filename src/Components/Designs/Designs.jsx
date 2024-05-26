@@ -1,21 +1,25 @@
+import React, { useState } from "react";
 import { get, map } from "lodash";
 import "./Designs.css";
-import React from "react";
 import Prompt from "../Prompt/Prompt";
 import { useNavigate } from "react-router-dom";
 import parse from "html-react-parser";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedResponse } from "../../redux/slice/responseSlice";
+
 const Designs = () => {
   const dispatch = useDispatch();
   const Navigate = useNavigate();
   const designArray = useSelector((state) =>
     get(state, "ResponseSlice.response")
   );
+  const [loading, setLoading] = useState(false); // State to manage loading
+
   const switchtoEdit = (item) => {
     dispatch(setSelectedResponse({ value: item }));
     Navigate("/editor");
   };
+
   const renderElement = (item) => {
     const content = parse(item.element, {
       replace: (domNode) => {
@@ -38,7 +42,10 @@ const Designs = () => {
         ))}
       </div>
       <div className="prompt-box">
-        <Prompt />
+        {/* Conditionally render the loader component based on the loading state */}
+        {/* {loading && <div>loading...</div>} */}
+        <Prompt loading={loading} setLoading={setLoading} />{" "}
+        {/* Pass setLoading to Prompt component */}
       </div>
     </div>
   );
