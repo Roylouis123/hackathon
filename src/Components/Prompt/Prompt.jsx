@@ -4,7 +4,7 @@ import SendIcon from "@mui/icons-material/Send";
 import askGemini from "../../gemini/gemini";
 import { useDispatch } from "react-redux";
 import generateIcon from "../../assets/Generate Icon.png";
-
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 const Prompt = ({ setLoading, loading }) => {
   const dispatch = useDispatch();
   const [prompt, setPrompt] = useState("");
@@ -26,6 +26,9 @@ const Prompt = ({ setLoading, loading }) => {
 
   return (
     <div className="prompt-container">
+        {/* <button className="add-prompt">
+        <AddOutlinedIcon/>
+        </button> */}
       <textarea
         className="prompt-input"
         placeholder="Prompt"

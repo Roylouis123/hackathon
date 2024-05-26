@@ -17,7 +17,7 @@ const askGemini = async (dispatch, msg) => {
             So try to give the json alone we don't need any other content like comments and other details.
             Code should be in JSX and CSS.
             That json structure will be given in the example below.
-            You have to generate 4 json with different design styling and it should be unique.
+            You have to generate json with different design styling and it should be unique.
             You have to wrap to those 4 jsons in an array.
             Each styles should be different.
             You have to create a Component what user have prompted.
@@ -165,7 +165,7 @@ const askGemini = async (dispatch, msg) => {
               },
             ]
 
-            Note: You have to create a Component what user have prompted and you must give only Array of JSON and don't give any explation or description.
+            Note: You have to create a Component what user have prompted and you must give only Array of JSON and should not give any explation or description.
         
       `,
           },

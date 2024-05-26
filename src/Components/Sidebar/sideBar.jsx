@@ -6,7 +6,6 @@ import AnalyticsOutlinedIcon from "@mui/icons-material/AnalyticsOutlined";
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("");
   const location = useLocation();
-
   useEffect(() => {
     setActiveLink(location.pathname);
   }, [location]);
