@@ -1,4 +1,4 @@
-import { get, map } from "lodash";
+import { get, map,isEmpty } from "lodash";
 import "./Designs.css";
 import React, { useState } from "react";
 import Prompt from "../Prompt/Prompt";
@@ -21,10 +21,365 @@ const json =  [
     "css": ".app {\n  font-family: sans-serif;\n  background-color: #f4f4f4;\n}\n\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n.navbar {\n  background-color: #333;\n  color: white;\n  padding: 10px 0;\n}\n\n.logo {\n  font-size: 24px;\n}\n\n.main {\n  padding: 20px 0;\n}\n\n.page-title {\n  text-align: center;\n  margin-bottom: 20px;\n}\n\n.recipe-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  gap: 20px;\n}\n\n.recipe-card {\n  border: 1px solid #ccc;\n  border-radius: 8px;\n  padding: 15px;\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\n  text-align: center;\n}\n\n.recipe-card img {\n  max-width: 100%;\n  height: auto;\n  border-radius: 8px;\n  margin-bottom: 10px;\n}\n\n.read-more-button {\n  padding: 8px 15px;\n  background-color: #008CBA;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n  transition: background-color 0.3s ease-in-out;\n}\n\n.read-more-button:hover {\n  background-color: #0069d9;\n}\n\n.footer {\n  background-color: #333;\n  color: white;\n  text-align: center;\n  padding: 10px 0;\n}\n"
   },
   {
-    "id": 3,
-    "jsx": "import React from 'react';\nimport './styles.css';\n\nconst Portfolio = () => {\n  return (\n    <div className='portfolio'>\n      <header className='header'>\n        <div className='container'>\n          <h1 className='title'>[Your Name]</h1>\n          <nav className='nav'>\n            <ul>\n              <li><a href='#about' className='nav-link'>About</a></li>\n              <li><a href='#skills' className='nav-link'>Skills</a></li>\n              <li><a href='#projects' className='nav-link'>Projects</a></li>\n              <li><a href='#contact' className='nav-link'>Contact</a></li>\n            </ul>\n          </nav>\n        </div>\n      </header>\n\n      <section className='about' id='about'>\n        <div className='container'>\n          <h2 className='section-title'>About Me</h2>\n          <p className='about-text'>I am a passionate software developer with [Number] years of experience in building innovative and user-friendly applications. My expertise lies in [List of Tech Stack], and I am always eager to learn and explore new technologies.</p>\n        </div>\n      </section>\n\n      <section className='skills' id='skills'>\n        <div className='container'>\n          <h2 className='section-title'>My Skills</h2>\n          <div className='skills-grid'>\n            <div className='skill-item'>\n              <i className='fab fa-html5'></i>\n              <h3>HTML</h3>\n            </div>\n            <div className='skill-item'>\n              <i className='fab fa-css3-alt'></i>\n              <h3>CSS</h3>\n            </div>\n            <div className='skill-item'>\n              <i className='fab fa-js-square'></i>\n              <h3>JavaScript</h3>\n            </div>\n            <div className='skill-item'>\n              <i className='fab fa-react'></i>\n              <h3>React</h3>\n            </div>\n            <div className='skill-item'>\n              <i className='fab fa-node-js'></i>\n              <h3>Node.js</h3>\n            </div>\n            <div className='skill-item'>\n              <i className='fab fa-python'></i>\n              <h3>Python</h3>\n            </div>\n            <div className='skill-item'>\n              <i className='fas fa-database'></i>\n              <h3>SQL</h3>\n            </div>\n            <div className='skill-item'>\n              <i className='fab fa-git-alt'></i>\n              <h3>Git</h3>\n            </div>\n            <div className='skill-item'>\n              <i className='fas fa-cogs'></i>\n              <h3>Agile Methodologies</h3>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      <section className='projects' id='projects'>\n        <div className='container'>\n          <h2 className='section-title'>Featured Projects</h2>\n          <div className='project-grid'>\n            <div className='project-card'>\n              <img src='[Project Image]' alt='[Project Name]' className='project-image' />\n              <h3 className='project-title'>[Project Name]</h3>\n              <p className='project-description'>[Brief Project Description]</p>\n              <a href='[Project Link]' target='_blank' rel='noopener noreferrer' className='project-link'>View Project</a>\n            </div>\n            <div className='project-card'>\n              <img src='[Project Image]' alt='[Project Name]' className='project-image' />\n              <h3 className='project-title'>[Project Name]</h3>\n              <p className='project-description'>[Brief Project Description]</p>\n              <a href='[Project Link]' target='_blank' rel='noopener noreferrer' className='project-link'>View Project</a>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      <section className='contact' id='contact'>\n        <div className='container'>\n          <h2 className='section-title'>Contact Me</h2>\n          <form action='[Your Email]' method='post' className='contact-form'>\n            <input type='text' name='name' placeholder='Your Name' required className='form-input' />\n            <input type='email' name='email' placeholder='Your Email' required className='form-input' />\n            <textarea name='message' placeholder='Your Message' required className='form-textarea'></textarea>\n            <button type='submit' className='form-button'>Send Message</button>\n          </form>\n        </div>\n      </section>\n\n      <footer className='footer'>\n        <div className='container'>\n          <p className='footer-text'>&copy; [Your Name] - [Year] All Rights Reserved</p>\n          <ul className='social-links'>\n            <li><a href='[LinkedIn Link]' target='_blank' rel='noopener noreferrer' className='social-link'><i className='fab fa-linkedin-in'></i></a></li>\n            <li><a href='[GitHub Link]' target='_blank' rel='noopener noreferrer' className='social-link'><i className='fab fa-github'></i></a></li>\n          </ul>\n        </div>\n      </footer>\n    </div>\n  );\n};\n\nexport default Portfolio;",
-    "css": ".portfolio {\n  font-family: 'Arial', sans-serif;\n  background-color: #f4f4f4;\n  color: #333;\n  min-height: 100vh;\n}\n\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n.header {\n  background-color: #333;\n  color: #fff;\n  padding: 20px 0;\n  text-align: center;\n}\n\n.title {\n  font-size: 3rem;\n  margin-bottom: 10px;\n}\n\n.nav ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: center;\n}\n\n.nav-link {\n  text-decoration: none;\n  color: #fff;\n  font-weight: bold;\n  padding: 10px 20px;\n  transition: background-color 0.3s ease;\n}\n\n.nav-link:hover {\n  background-color: #555;\n}\n\n.about {\n  padding: 40px 0;\n  background-color: #fff;\n}\n\n.section-title {\n  font-size: 2rem;\n  margin-bottom: 20px;\n}\n\n.about-text {\n  line-height: 1.6;\n  margin-bottom: 30px;\n}\n\n.skills {\n  padding: 40px 0;\n  background-color: #f4f4f4;\n}\n\n.skills-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  grid-gap: 20px;\n  margin-top: 30px;\n}\n\n.skill-item {\n  text-align: center;\n  padding: 20px;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\n  transition: box-shadow 0.3s ease;\n}\n\n.skill-item:hover {\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\n}\n\n.skill-item i {\n  font-size: 3rem;\n  color: #333;\n  margin-bottom: 10px;\n}\n\n.skill-item h3 {\n  margin-bottom: 0;\n}\n\n.projects {\n  padding: 40px 0;\n  background-color: #fff;\n}\n\n.project-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  grid-gap: 20px;\n  margin-top: 30px;\n}\n\n.project-card {\n  border: 1px solid #ccc;\n  padding: 15px;\n  border-radius: 5px;\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\n  transition: box-shadow 0.3s ease;\n}\n\n.project-card:hover {\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\n}\n\n.project-image {\n  width: 100%;\n  height: 200px;\n  object-fit: cover;\n  border-radius: 5px;\n  margin-bottom: 10px;\n}\n\n.project-title {\n  margin-bottom: 5px;\n}\n\n.project-description {\n  margin-bottom: 10px;\n  line-height: 1.5;\n}\n\n.project-link {\n  display: inline-block;\n  text-decoration: none;\n  color: #fff;\n  background-color: #333;\n  padding: 8px 15px;\n  border-radius: 5px;\n  transition: background-color 0.3s ease;\n}\n\n.project-link:hover {\n  background-color: #555;\n}\n\n.contact {\n  padding: 40px 0;\n  background-color: #f4f4f4;\n}\n\n.contact-form {\n  display: flex;\n  flex-direction: column;\n  width: 400px;\n  margin: 0 auto;\n}\n\n.form-input,\n.form-textarea {\n  padding: 10px;\n  margin-bottom: 10px;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  font-size: 1rem;\n}\n\n.form-textarea {\n  height: 100px;\n  resize: vertical;\n}\n\n.form-button {\n  padding: 10px 20px;\n  background-color: #333;\n  color: #fff;\n  border: none;\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n  transition: background-color 0.3s ease;\n}\n\n.form-button:hover {\n  background-color: #555;\n}\n\n.footer {\n  background-color: #333;\n  color: #fff;\n  text-align: center;\n  padding: 20px 0;\n}\n\n.footer-text {\n  margin-bottom: 10px;\n}\n\n.social-links {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: center;\n}\n\n.social-link {\n  color: #fff;\n  font-size: 1.2em;\n  margin: 0 10px;\n  transition: color 0.3s ease;\n}\n\n.social-link:hover {\n  color: #eee;\n}"
-  },
+    "id": 2,
+    "jsx": `
+    import React, { useState } from "react";
+    import "./styles.css";
+
+    const FoodItem = ({ name, price, image, description }) => {
+      const [quantity, setQuantity] = useState(1);
+
+      const handleQuantityChange = (event) => {
+        setQuantity(parseInt(event.target.value, 10) || 1);
+      };
+
+      return (
+        <div className="food-item">
+          <img src={image} alt={name} />
+          <div className="food-item-details">
+            <h3>{name}</h3>
+            <p>{description}</p>
+            <div className="price-quantity">
+              <span className="price">{price.toFixed(2)}</span>
+              <div className="quantity-control">
+                <button onClick={() => setQuantity(quantity - 1)} disabled={quantity === 1}>
+                  -
+                </button>
+                <input
+                  type="number"
+                  value={quantity}
+                  onChange={handleQuantityChange}
+                  min="1"
+                />
+                <button onClick={() => setQuantity(quantity + 1)}>+</button>
+              </div>
+            </div>
+            <button className="add-to-cart-button" onClick={() => addToCart({ name, price, image, quantity, description })}>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      );
+    };
+
+    const CartItem = ({ name, price, quantity, image, removeFromCart }) => {
+      return (
+        <div className="cart-item">
+          <img src={image} alt={name} />
+          <div className="cart-item-details">
+            <h3>{name}</h3>
+            <span className="price">{price.toFixed(2)}</span>
+            <span className="quantity">x {quantity}</span>
+            <button className="remove-button" onClick={() => removeFromCart(name)}>Remove</button>
+          </div>
+        </div>
+      );
+    };
+
+    const App = () => {
+      const [cartItems, setCartItems] = useState([]);
+      const [isCartOpen, setIsCartOpen] = useState(false);
+
+      const addToCart = (foodItem) => {
+        const existingItem = cartItems.find(
+          (item) => item.name === foodItem.name
+        );
+
+        if (existingItem) {
+          setCartItems(
+            cartItems.map((item) =>
+              item.name === foodItem.name
+                ? { ...item, quantity: item.quantity + foodItem.quantity }
+                : item
+            )
+          );
+        } else {
+          setCartItems([
+            ...cartItems,
+            foodItem,
+          ]);
+        }
+      };
+
+      const removeFromCart = (itemName) => {
+        setCartItems(cartItems.filter((item) => item.name !== itemName));
+      };
+
+      const toggleCart = () => {
+        setIsCartOpen(!isCartOpen);
+      };
+
+      const foodItems = [
+        {
+          name: "Pizza",
+          price: 12.99,
+          image:
+            "https://images.unsplash.com/photo-1574126154505-16dec3ca01ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+          description: "Delicious pepperoni pizza with extra cheese"
+        },
+        {
+          name: "Burger",
+          price: 8.99,
+          image:
+            "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+          description:
+            "Classic beef burger with lettuce, tomato, and cheese"
+        },
+        {
+          name: "Fries",
+          price: 4.99,
+          image:
+            "https://images.unsplash.com/photo-1589742698221-6970c0340f30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+          description: "Crispy golden fries"
+        },
+        {
+          name: "Salad",
+          price: 7.99,
+          image:
+            "https://images.unsplash.com/photo-1589742698221-6970c0340f30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+          description: "Fresh and healthy salad with grilled chicken"
+        }
+      ];
+
+      return (
+        <div className="App">
+          <header className="header">
+            <h1>Food Delivery</h1>
+            <button className="cart-button" onClick={toggleCart}>
+              Cart ({cartItems.length})
+            </button>
+          </header>
+
+          <main className="main">
+            <div className="food-items-container">
+              {foodItems.map((foodItem) => (
+                <FoodItem
+                  key={foodItem.name}
+                  {...foodItem}
+                  addToCart={addToCart}
+                />
+              ))}
+            </div>
+
+            <div className={isCartOpen ? "cart open" : "cart"}>
+              <h2>Your Cart</h2>
+              {cartItems.length === 0 ? (
+                <p>Your cart is empty.</p>
+              ) : (
+                <div className="cart-items">
+                  {cartItems.map((cartItem) => (
+                    <CartItem
+                      key={cartItem.name}
+                      {...cartItem}
+                      removeFromCart={removeFromCart}
+                    />
+                  ))}
+                </div>
+              )}
+              <div className="cart-total">
+                <h3>Total: {cartItems.reduce(
+                  (total, item) => total + item.price * item.quantity,
+                  0
+                ).toFixed(2)}</h3>
+              </div>
+              <button className="checkout-button">Checkout</button>
+            </div>
+          </main>
+        </div>
+      );
+    };
+
+    export default App;`
+    ,
+    "css": `
+    .App {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-button {
+      background-color: #fff;
+      color: #333;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .food-items-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .food-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      display: flex;
+      align-items: flex-start; /* Align items to the top */
+    }
+
+    .food-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+
+    .food-item-details {
+      flex: 1;
+    }
+
+    .food-item-details h3 {
+      margin-top: 0;
+    }
+
+    .price-quantity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .price {
+      font-weight: bold;
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+    }
+
+    .quantity-control button {
+      background-color: #eee;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .quantity-control input {
+      width: 30px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.25rem;
+      margin: 0 0.5rem;
+    }
+
+    .add-to-cart-button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    /* Cart styles */
+    .cart {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(100%);
+    }
+
+    .cart.open {
+      transform: translateX(0);
+    }
+
+    .cart h2 {
+      margin-top: 0;
+    }
+
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .cart-item img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+
+    .cart-item-details {
+      flex: 1;
+    }
+
+    .cart-item-details h3 {
+      margin-top: 0;
+    }
+
+    .quantity {
+      font-size: 0.8rem;
+      color: #666;
+      margin-left: 0.5rem;
+    }
+
+    .remove-button {
+      background-color: #f44336;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+
+    .cart-total {
+      margin-top: 1rem;
+      text-align: right;
+    }
+
+    .checkout-button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    `
+  }
 ]
 const Designs = () => {
   const [loading, setLoading] = useState(false);
@@ -69,27 +424,30 @@ const Designs = () => {
 
   return (
     <div className="design-wrapper">
-      {!loading ? (
+      {!loading && (
+        isEmpty(designArray) && <div className="no-designs"> 
+          Start Your Designs With A Prompt
+        </div> ||
         <div className="design-container">
           {map(designArray, (ay) => (
             <div
               className="design-box"
               key={ay.id}
-              //   onClick={() => switchToEdit(ay)}
+                onClick={() => switchToEdit(ay)}
             >
               {renderElement(ay)}
             </div>
           ))}
         </div>
-      ) : (
+      ) || (
         <div className="loader-container">
           <BoxLoader />
         </div>
       )}
 
-      {/* <div className="prompt-box"> */}
+      <div className="prompt-box">
         <Prompt setLoading={setLoading} loading={loading} />
-      {/* </div> */}
+      </div>
     </div>
   );
 };

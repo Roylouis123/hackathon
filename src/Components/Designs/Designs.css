@@ -69,6 +69,16 @@
     border-radius: 10px !important;
     box-shadow: 0px 0px 10px 0px #dfdfdf;
 }
+.no-designs{
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  height: 100%;
+  color: rgb(30, 144, 255, 0.74);
+  font-family: 'Courier New', Courier, monospace;
+}
 @media screen and (max-width: 768px) {
   .design-box {
     width: calc(

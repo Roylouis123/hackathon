@@ -14,22 +14,30 @@ const askGemini = async (dispatch, msg) => {
           {
             text: `
             You have to build a json and that json we will use to create react component.
-            So try to give the json alone we don't need any other content like comments and other details.
+            DO not generate ot respond with anything other than the JSON itself.
             Code should be in JSX and CSS.
             That json structure will be given in the example below.
-            You have to generate json with different design styling and it should be unique.
-            You have to wrap to those 4 jsons in an array.
+            You have to generate 2 json with different design styling and it should be unique.
+            You have to wrap to those 2 jsons in an array.
             Each styles should be different.
             You have to create a Component what user have prompted.
             Below is just an example.
 
-            Note: I strictly tell you to give each json unique id and unique jsx and unique css.
+            Note: Strictly give each json unique id and unique jsx and unique css.
+
+            You can use images from https://images.unsplash.com website.
 
             Response:
 
             '''[{...},{...},{...},{...}]'''
 
             Note: You have to create a Component what user have prompted and you must give only Array of JSON without any note or comments.
+
+            Note: There should be only single component App.js inside add all component without exporting.All component should be in App.js.
+
+
+            i Order you to Strictly give me 4 json and nothing Else.
+
 
             Example:
             [
@@ -336,6 +344,380 @@ const askGemini = async (dispatch, msg) => {
                 '
               }
             ]
+
+            Example 4:
+
+            [
+              {
+                "id": 1,
+                "jsx": 'import React, { useState } from "react";
+                import "./styles.css";
+                
+                const FoodItem = ({ name, price, image, description, addToCart }) => {
+                  const [quantity, setQuantity] = useState(1);
+                
+                  const handleQuantityChange = (event) => {
+                    const value = parseInt(event.target.value, 10) || 1;
+                    setQuantity(value > 0 ? value : 1);
+                  };
+                
+                  const handleAddToCart = () => {
+                    addToCart({ name, price, image, quantity, description });
+                  };
+                
+                  return (
+                    <div className="food-item">
+                      <img
+                        src={image}
+                        alt={name}
+                        onError={(e) => (e.target.src = "fallback-image-url.jpg")}
+                      />
+                      <div className="food-item-details">
+                        <h3>{name}</h3>
+                        <p>{description}</p>
+                        <div className="price-quantity">
+                          <span className="price">{price.toFixed(2)}</span>
+                          <div className="quantity-control">
+                            <button
+                              onClick={() => setQuantity(quantity - 1)}
+                              disabled={quantity === 1}
+                            >
+                              -
+                            </button>
+                            <input
+                              type="number"
+                              value={quantity}
+                              onChange={handleQuantityChange}
+                              min="1"
+                            />
+                            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+                          </div>
+                        </div>
+                        <button className="add-to-cart-button" onClick={handleAddToCart}>
+                          Add to Cart
+                        </button>
+                      </div>
+                    </div>
+                  );
+                };
+                
+                const CartItem = ({ name, price, quantity, image, removeFromCart }) => {
+                  return (
+                    <div className="cart-item">
+                      <img
+                        src={image}
+                        alt={name}
+                        onError={(e) => (e.target.src = "fallback-image-url.jpg")}
+                      />
+                      <div className="cart-item-details">
+                        <h3>{name}</h3>
+                        <span className="price">{price.toFixed(2)}</span>
+                        <span className="quantity">x {quantity}</span>
+                        <button className="remove-button" onClick={() => removeFromCart(name)}>
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  );
+                };
+                
+                const App = () => {
+                  const [cartItems, setCartItems] = useState([]);
+                  const [isCartOpen, setIsCartOpen] = useState(false);
+                
+                  const addToCart = (foodItem) => {
+                    const existingItem = cartItems.find((item) => item.name === foodItem.name);
+                
+                    if (existingItem) {
+                      setCartItems(
+                        cartItems.map((item) =>
+                          item.name === foodItem.name
+                            ? { ...item, quantity: item.quantity + foodItem.quantity }
+                            : item
+                        )
+                      );
+                    } else {
+                      setCartItems([...cartItems, foodItem]);
+                    }
+                  };
+                
+                  const removeFromCart = (itemName) => {
+                    setCartItems(cartItems.filter((item) => item.name !== itemName));
+                  };
+                
+                  const toggleCart = () => {
+                    setIsCartOpen(!isCartOpen);
+                  };
+                
+                  const foodItems = [
+                    {
+                      name: "Pizza",
+                      price: 12.99,
+                      image:
+                        "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=3181&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                      description: "Delicious pepperoni pizza with extra cheese",
+                    },
+                    {
+                      name: "Burger",
+                      price: 8.99,
+                      image:
+                        "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                      description: "Classic beef burger with lettuce, tomato, and cheese",
+                    },
+                    {
+                      name: "Fries",
+                      price: 4.99,
+                      image:
+                        "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                      description: "Crispy golden fries",
+                    },
+                    {
+                      name: "Salad",
+                      price: 7.99,
+                      image:
+                        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                      description: "Fresh and healthy salad with grilled chicken",
+                    },
+                  ];
+                
+                  return (
+                    <div className="App">
+                      <header className="header">
+                        <h1>Food Delivery</h1>
+                        <button className="cart-button" onClick={toggleCart}>
+                          Cart ({cartItems.length})
+                        </button>
+                      </header>
+                
+                      <main className="main">
+                        <div className="food-items-container">
+                          {foodItems.map((foodItem) => (
+                            <FoodItem key={foodItem.name} {...foodItem} addToCart={addToCart} />
+                          ))}
+                        </div>
+                
+                        <div className={isCartOpen ? "cart open" : "cart"}>
+                          <h2>Your Cart</h2>
+                          {cartItems.length === 0 ? (
+                            <p>Your cart is empty.</p>
+                          ) : (
+                            <div className="cart-items">
+                              {cartItems.map((cartItem) => (
+                                <CartItem
+                                  key={cartItem.name}
+                                  {...cartItem}
+                                  removeFromCart={removeFromCart}
+                                />
+                              ))}
+                            </div>
+                          )}
+                          <div className="cart-total">
+                            <h3>
+                              Total: $
+                              {cartItems
+                                .reduce((total, item) => total + item.price * item.quantity, 0)
+                                .toFixed(2)}
+                            </h3>
+                          </div>
+                          <button className="checkout-button">Checkout</button>
+                        </div>
+                      </main>
+                    </div>
+                  );
+                };
+                
+                export default App;
+                ',
+                css: '
+                .App {
+                  font-family: sans-serif;
+                  display: flex;
+                  flex-direction: column;
+                  min-height: 100vh;
+                  background-color: #f0f0f0;
+                }
+                
+                .header {
+                  background-color: #333;
+                  color: #fff;
+                  padding: 1rem;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                }
+                
+                .cart-button {
+                  background-color: #fff;
+                  color: #333;
+                  padding: 0.5rem 1rem;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                }
+                
+                .main {
+                  display: flex;
+                  flex-direction: column;
+                  padding: 1rem;
+                }
+                
+                .food-items-container {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                  gap: 1rem;
+                }
+                
+                .food-item {
+                  background-color: #fff;
+                  border-radius: 8px;
+                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                  padding: 1rem;
+                  display: flex;
+                  align-items: flex-start;
+                }
+                
+                .food-item img {
+                  width: 120px;
+                  height: 120px;
+                  object-fit: cover;
+                  border-radius: 8px;
+                  margin-right: 1rem;
+                }
+                
+                .food-item-details {
+                  flex: 1;
+                }
+                
+                .food-item-details h3 {
+                  margin-top: 0;
+                }
+                
+                .price-quantity {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-top: 0.5rem;
+                }
+                
+                .price {
+                  font-weight: bold;
+                }
+                
+                .quantity-control {
+                  display: flex;
+                  align-items: center;
+                }
+                
+                .quantity-control button {
+                  background-color: #eee;
+                  border: none;
+                  padding: 0.25rem 0.5rem;
+                  border-radius: 4px;
+                  cursor: pointer;
+                }
+                
+                .quantity-control input {
+                  width: 30px;
+                  text-align: center;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  padding: 0.25rem;
+                  margin: 0 0.5rem;
+                }
+                
+                .add-to-cart-button {
+                  background-color: #4caf50;
+                  color: #fff;
+                  padding: 0.5rem 1rem;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin-top: 1rem;
+                }
+                
+                /* Cart styles */
+                .cart {
+                  position: fixed;
+                  top: 0;
+                  right: 0;
+                  width: 300px;
+                  height: 100vh;
+                  background-color: #fff;
+                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                  padding: 1rem;
+                  transition: transform 0.3s ease-in-out;
+                  transform: translateX(100%);
+                }
+                
+                .cart.open {
+                  transform: translateX(0);
+                }
+                
+                .cart h2 {
+                  margin-top: 0;
+                }
+                
+                .cart-items {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1rem;
+                  margin-top: 1rem;
+                }
+                
+                .cart-item {
+                  display: flex;
+                  align-items: center;
+                }
+                
+                .cart-item img {
+                  width: 50px;
+                  height: 50px;
+                  object-fit: cover;
+                  border-radius: 8px;
+                  margin-right: 1rem;
+                }
+                
+                .cart-item-details {
+                  flex: 1;
+                }
+                
+                .cart-item-details h3 {
+                  margin-top: 0;
+                }
+                
+                .quantity {
+                  font-size: 0.8rem;
+                  color: #666;
+                  margin-left: 0.5rem;
+                }
+                
+                .remove-button {
+                  background-color: #f44336;
+                  color: #fff;
+                  padding: 0.5rem 1rem;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin-left: 1rem;
+                }
+                
+                .cart-total {
+                  margin-top: 1rem;
+                  text-align: right;
+                }
+                
+                .checkout-button {
+                  background-color: #4caf50;
+                  color: #fff;
+                  padding: 0.5rem 1rem;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin-top: 1rem;
+                }
+'                
+              },
+                
         
       `,
           },
@@ -357,6 +739,12 @@ const askGemini = async (dispatch, msg) => {
 
   const text = response.text();
   console.log(text, "the text");
+
+  // console.log(text.slice(text.indexOf("**Explanation:**") + 18), "---------roy-----");const regex = /[\s\S]*?/;
+  // const regex = /[\s\S]*?/;
+  // const clean = text.replace(regex, '').trim();
+  
+  // console.log(clean);
   const cleanedString = text.replace(/.*?(```json(.*?)```).*?/gs, "$2").trim();
   const extractedString = cleanedString.replace(/`/g, "");
   console.log("cleanedStr", extractedString);
