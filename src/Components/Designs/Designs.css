@@ -1,9 +1,7 @@
 .design-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  height: calc(100% - 110px);
+  /* padding: 20px; */
+  height: 100%;
+  width: 100%;
   overflow-y: auto;
 }
 
@@ -12,6 +10,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+    padding: 30px;
 }
 
 .loader-container {
@@ -22,26 +21,21 @@
   width: 100%;
 }
 
-.prompt-box {
-  position: fixed;
-  margin-left: 100px;
-  bottom: 20px; /* Adjust as needed */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999; /* Ensure it appears above other content */
-  width: 80%;
-}
-
 .Edit_Button {
-  border: 1px solid black;
-  border-radius: 50%;
-  padding: 5px;
-  color: rgb(0, 0, 0);
-
+  border: rgb(30, 144, 255);
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: rgb(30, 144, 255);
+  background-color: rgb(30, 144, 255, 0.34);
   cursor: pointer;
   margin-left: 10px;
+  box-shadow:1px 1px 1px 1px rgb(30, 144, 255)
 }
-
+.Edit_Button:hover {
+  background-color: rgb(30, 144, 255);
+  color: white;
+  box-shadow: none;
+}
 /* Designs.css */
 .designs-container {
   display: flex;
@@ -50,10 +44,31 @@
 }
 
 .design-box {
-  width: calc(50% - 20px); /* Adjust as needed for two items per row */
-  margin-bottom: 20px; /* Add margin between rows */
+  width: calc(50% - 20px);
+  border-radius: 10px; /* Adjust as needed for two items per row */
+}
+.sp-preview-iframe::-webkit-scrollbar {
+  width: 5px !important ;
 }
 
+/* Track */
+.sp-preview-iframe::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.sp-preview-iframe::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.sp-preview-iframe::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.snack-box{
+    border-radius: 10px !important;
+    box-shadow: 0px 0px 10px 0px #dfdfdf;
+}
 @media screen and (max-width: 768px) {
   .design-box {
     width: calc(

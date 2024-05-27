@@ -43,6 +43,11 @@ const Designs = () => {
       <SandpackProvider
         files={{ "/App.js": item.jsx, "/styles.css": item.css }}
         template="react"
+        options={{
+          classes: {
+            "sp-layout": "snack-box",
+          },
+        }}
       >
         <SandpackLayout>
           <SandpackPreview
@@ -82,9 +87,9 @@ const Designs = () => {
         </div>
       )}
 
-      <div className="prompt-box">
+      {/* <div className="prompt-box"> */}
         <Prompt setLoading={setLoading} loading={loading} />
-      </div>
+      {/* </div> */}
     </div>
   );
 };

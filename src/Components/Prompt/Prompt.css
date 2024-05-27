@@ -1,10 +1,16 @@
 .prompt-container {
-  position: relative;
+    width: 100%;
+    position: sticky;
+    bottom: 10px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    place-items: center;
 }
 .send-icon {
   position: absolute;
-  right: 0;
-  bottom: 13px;
+  right: 30px;
+  bottom: 10px;
   background: rgba(30, 144, 255, 0.3);
   color: #1e90ff;
   border: 1px solid rgba(30, 144, 255, 0.3);
@@ -17,13 +23,22 @@
 }
 
 .prompt-input {
-  padding: 5px 8px;
-  height: 70px;
-  width: 100%;
+  padding: 8px 8px;
+  height: 80px;
+  width: 95%;
   border: 1px solid #dfdfdf;
-  border-radius: 8px;
+  border-radius: 15px;
   font-size: 14px;
+  box-shadow: 1px 5px 10px 1px #dfdfdf
 }
 .prompt-input:focus {
   outline: none;
+}
+.add-prompt{
+    border: none;
+    background-color: rgb(30, 144, 255,0.34);
+    color:rgb(30, 144, 255); ;
+    border-radius: 5px;
+    font-size: 10px;
+    margin-right: 10px;
 }
